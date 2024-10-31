@@ -1,0 +1,33 @@
+
+.w{
+    height: 100vh;
+    color: rgba(255, 255, 255, 0.9);
+}
+nz-sider{
+    background-color: #000000;
+}
+
+._w{
+    background-color: #212121;
+}
+
+  nz-header {
+    height: 60px;
+    padding: 0;
+    background-color: #212121;
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.2);
+  }
+
+  //内容
+  nz-content{
+    margin: 16px 16px 0 16px;
+    padding: 22px;
+    min-height: 360px;
+    height: 100%;
+  }
+
+  nz-footer {
+    color: rgb(255, 255, 255, 0.8);
+    background-color: #1e1e1e;
+    text-align: center;
+  }

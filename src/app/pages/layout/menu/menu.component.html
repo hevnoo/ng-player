@@ -1,0 +1,49 @@
+<div class="w-menu">
+  <div class="logo">Spotify</div>
+  <ul class="menu" nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+    <!--  -->
+    <ng-container *ngFor="let item of menu; let key=index">
+      <li *ngIf="!item.children; else noChild" nz-menu-item [routerLink]="[item.link]">
+        <span class="icon" nz-icon [nzType]="item.icon"></span>
+        <span class="title">{{item.title}}</span>
+      </li>
+      <ng-template #noChild>
+        <li nz-submenu [nzTitle]="item.title" [nzIcon]="item.icon">
+          <ul *ngFor="let res of item.children; let key=index">
+            <li nz-menu-item [routerLink]="[res.link]">
+              <span class="icon _icon" nz-icon [nzType]="res.icon" style="margin-right: 7px;"></span>
+              <span class="title">{{res.title}}</span></li>
+          </ul>
+        </li>
+      </ng-template>
+    </ng-container>
+    <!--  -->
+    <div class="second-menu">
+      <ng-container *ngFor="let item of _menu; let key=index">
+        <li *ngIf="!item.children; else noChilds" nz-menu-item [routerLink]="[item.link]">
+          <span class="icon" nz-icon [nzType]="item.icon"></span>
+          <span class="title">{{item.title}}</span>
+        </li>
+        <ng-template #noChilds>
+          <li nz-submenu [nzTitle]="item.title" [nzIcon]="item.icon">
+            <ul *ngFor="let res of item.children; let key=index">
+              <li nz-menu-item [routerLink]="[res.link]">
+                <span class="icon _icon" nz-icon [nzType]="res.icon" style="margin-right: 7px;"></span>
+                <span class="title">{{res.title}}</span></li>
+            </ul>
+          </li>
+        </ng-template>
+      </ng-container>
+    </div>
+    <!-- 分割线 -->
+    <div style="border-bottom: 0.5px solid rgba(255, 255, 255, 0.2); width: 100%; margin: 7px 0; "></div>
+
+  </ul>
+  <!-- 伸缩 -->
+  <span
+    class="trigger"
+    nz-icon
+    [nzType]="isCollapsed ? 'right-square' : 'left-square'"
+    (click)="toggleCollapsed()"
+  ></span>
+</div>

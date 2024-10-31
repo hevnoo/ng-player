@@ -1,0 +1,24 @@
+<div class="w-dropdown">
+  <a class="user" nz-dropdown [nzDropdownMenu]="menu">
+    <img *ngIf="userInfo.head_img; else default_img" :src="userInfo.head_img" alt="">
+    <ng-template #default_img>
+      <img src="../../../../assets/img/logo/head_img.png" alt="">
+    </ng-template>
+
+    <span class="nickname" *ngIf="userInfo.nickname; else default_name">{{userInfo.nickname}}</span>
+    <ng-template #default_name>
+      <span class="nickname">user</span>
+    </ng-template>
+
+    <span class="down-icon" nz-icon nzType="caret-down"></span>
+  </a>
+  <nz-dropdown-menu #menu="nzDropdownMenu">
+    <ul nz-menu nzSelectable>
+      <li nz-menu-item>个人中心</li>
+      <li nz-menu-item [routerLink]="[ '/pages/home' ]">主页</li>
+      <li nz-menu-item>我的歌单</li>
+      <li nz-menu-item nzDanger [routerLink]="[ '/login/sign-in' ]" (click)="toLogin()">退出登录</li>
+    </ul>
+  </nz-dropdown-menu>
+
+</div>

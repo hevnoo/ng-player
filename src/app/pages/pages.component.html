@@ -1,0 +1,16 @@
+<nz-layout class="w">
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null" [nzWidth]="230">
+    <app-menu (collapsed)="getEmi($event)"></app-menu>
+  </nz-sider>
+  <nz-layout class="_w">
+    <nz-header>
+      <app-header></app-header>
+    </nz-header>
+    <nz-content>
+      <router-outlet></router-outlet>
+    </nz-content>
+    <nz-footer>
+      <app-footer></app-footer>
+    </nz-footer>
+  </nz-layout>
+</nz-layout>

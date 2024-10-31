@@ -1,0 +1,49 @@
+//
+.w-menu{
+  position: relative;
+}
+//菜单
+.menu{
+  background-color: #000000;
+}
+.second-menu{
+  margin-top: 20px;
+}
+//菜单字体、图标
+li > span {
+  font-size: 14px;
+  font-weight: 550;
+}
+//菜单图标
+li {
+  ::ng-deep .anticon svg{
+    font-size: 20px;
+  }
+}
+//logo
+.logo {
+  height: 60px;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.2);
+  color:rgba(255, 255, 255, 0.9);
+  text-align: center;
+  line-height: 60px;
+  font-size: 24px;
+  font-weight: 550;
+}
+//伸缩图标
+.trigger {
+  position: absolute;
+  right: 10px;
+  bottom: -50vh;
+  font-size: 18px;
+  line-height: 60px;
+  color: rgba(255, 255, 255, 0.7);
+  // padding: 0 20px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.trigger:hover {
+  color: #1890ff;
+}
+
+

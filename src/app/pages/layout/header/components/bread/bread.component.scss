@@ -1,0 +1,12 @@
+.w-bread {
+
+  & > span{
+    padding: 10px;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+  }
+  & :nth-child(1){
+    margin-right: 17px;
+  }
+}
